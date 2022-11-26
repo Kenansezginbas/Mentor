@@ -22,11 +22,11 @@ class BlogContainer extends StatelessWidget {
               children: [
                 Text(
                   "Makale",
-                  style: CustomTextStyle.titleWhiteTextStyle,
+                  style: CustomTextStyle.subtitleGreyTextStyle,
                 ),
                 Text(
                   "26-10-2022 21:16",
-                  style: CustomTextStyle.titleWhiteTextStyle,
+                  style: CustomTextStyle.subtitleGreyTextStyle,
                 ),
               ],
             ),
@@ -35,7 +35,7 @@ class BlogContainer extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               "Nasil Yazilimci Olunur ? ",
-              style: CustomTextStyle.subtitleGreyTextStyle,
+              style: CustomTextStyle.titleWhiteTextStyle,
             ),
           ),
           Image(
