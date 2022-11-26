@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentor/controller/tabBarController.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_text_style.dart';
 import 'package:mentor/view/home_view.dart';
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Mentor',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: CustomColors.darkColor,
-      ),
-      home: HomeView(),
+          scaffoldBackgroundColor: CustomColors.darkColor,
+          appBarTheme: AppBarTheme(backgroundColor: CustomColors.darkColor)),
+      home: TabBarController(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_text_style.dart';
+import 'package:mentor/widgets/blog_container.dart';
 import 'package:mentor/widgets/logo_widget.dart';
 
 class HomeView extends StatefulWidget {
@@ -16,15 +17,15 @@ class _HomeViewState extends State<HomeView> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Center(
-        child: Container(
+        body: ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Container(
           alignment: Alignment.topCenter,
           color: CustomColors.darkColor2,
-          height: height * .90,
-          width: width * .95,
-          child: LogoWidget(),
-        ),
-      ),
-    );
+          child: BlogContainer(),
+        );
+      },
+    ));
   }
 }

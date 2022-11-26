@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_text_style.dart';
+import 'package:mentor/widgets/custom_circle_avatar.dart';
 
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
@@ -14,9 +14,7 @@ class LogoWidget extends StatelessWidget {
           "MEN",
           style: CustomTextStyle.logoTextStyle,
         ),
-        CircleAvatar(
-          backgroundColor: CustomColors.orangeColor,
-        ),
+        CustomCircleAvatar(),
         Text(
           "TOR",
           style: CustomTextStyle.logoTextStyle,
