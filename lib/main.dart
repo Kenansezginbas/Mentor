@@ -1,12 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/controller/tabBarController.dart';
+import 'package:mentor/firebase_options.dart';
 import 'package:mentor/utils/custom_colors.dart';
-import 'package:mentor/utils/custom_text_style.dart';
-import 'package:mentor/view/auth/sign_in_view.dart';
 import 'package:mentor/view/auth/sign_up_view.dart';
-import 'package:mentor/view/home_view.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    const MyApp(),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,11 +24,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: CustomColors.darkColor,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: CustomColors.darkColor,
         ),
       ),
-      home: SignUpView(),
+      home: const SignUpView(),
     );
   }
 }

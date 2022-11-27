@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mentor/service/auth_service.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_decoration.dart';
+import 'package:mentor/utils/custom_dialogs.dart';
 import 'package:mentor/utils/custom_text_style.dart';
 import 'package:mentor/widgets/custom_graident_button.dart';
 import 'package:mentor/widgets/custom_sign_row_button.dart';
@@ -16,30 +19,58 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   late String email, password;
   TextEditingController _textEditingController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const LogoWidget(),
-            const SizedBox(height: 50),
-            emailTextField(),
-            const SizedBox(height: 10),
-            passwordTextField(),
-            const SizedBox(height: 10),
-            passwordControllTextField(),
-            const SizedBox(height: 10),
-            CustomGraidentButton(onPressed: () {}, buttonText: "Kayıt Ol"),
-            doHaveAnAccount()
-          ],
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const LogoWidget(),
+              const SizedBox(height: 50),
+              emailTextField(),
+              const SizedBox(height: 10),
+              passwordTextField(),
+              const SizedBox(height: 10),
+              passwordControllTextField(),
+              const SizedBox(height: 10),
+              CustomGraidentButton(
+                onPressed: formValidateAndSave,
+                buttonText: "Kayıt Ol",
+              ),
+              doHaveAnAccount()
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  void formValidateAndSave() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      signUp();
+    }
+  }
+
+  Future signUp() async {
+    final authService = AuthService();
+    final customDialog = CustomDialog();
+    try {
+      final resultAuth = await authService.signUp(email, password);
+      if (resultAuth == "success") {
+        print("Basarili");
+      } else {
+        customDialog.showCustomCupertinoDialog(
+            context, "Hata", resultAuth.toString());
+      }
+    } catch (e) {}
   }
 
   TextFormField emailTextField() {
@@ -64,8 +95,8 @@ class _SignUpViewState extends State<SignUpView> {
   TextFormField passwordTextField() {
     return TextFormField(
       validator: (value) {
-        if (value!.length < 6) {
-          return "En Az 6 Karakter Giriniz";
+        if (value!.isEmpty) {
+          return "Lutfen Mail Adresinizi Giriniz.";
         } else {
           return null;
         }
@@ -86,7 +117,7 @@ class _SignUpViewState extends State<SignUpView> {
       validator: (value) {
         if (value!.length < 6) {
           return "En Az 6 Karakter Giriniz";
-        } else if (_textEditingController.text == value) {
+        } else if (_textEditingController.text != value) {
           return "Şifreler Uyuşmuyor";
         } else {
           return null;

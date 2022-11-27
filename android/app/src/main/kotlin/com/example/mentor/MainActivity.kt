@@ -1,4 +1,4 @@
-package com.example.mentor
+package com.mentor.live
 
 import io.flutter.embedding.android.FlutterActivity
 

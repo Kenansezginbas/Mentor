@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "890810547742",
+    "project_id": "mentork",
+    "storage_bucket": "mentork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890810547742:android:41995faadc5811f2fd780f",
+        "android_client_info": {
+          "package_name": "com.mentor.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890810547742-1lad1l832vu426plfqfa2ai4b1ttnpe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbUGBY4wbCiVhzcn9teeJHKxgZc-3dFgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890810547742-1lad1l832vu426plfqfa2ai4b1ttnpe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
