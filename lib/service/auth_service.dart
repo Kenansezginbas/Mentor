@@ -18,6 +18,10 @@ class AuthService {
         case "wrong-password":
           res = "Hatalı Şifre";
           break;
+        case "ERROR_INVALID_EMAIL":
+        case "invalid-email":
+          res = "Geçersiz Mail";
+          break;
         case "user-disabled":
           res = "Kullanıcı Pasif";
           break;

@@ -3,7 +3,6 @@ import 'package:mentor/utils/custom_text_style.dart';
 
 class CustomSignRowButton extends StatelessWidget {
   final GestureTapCallback onPressed;
-
   final text, buttonText;
   const CustomSignRowButton({
     super.key,
@@ -22,7 +21,7 @@ class CustomSignRowButton extends StatelessWidget {
           style: CustomTextStyle.subtitleGreyTextStyle,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(
             buttonText,
             style: CustomTextStyle.titleWhiteTextStyle,

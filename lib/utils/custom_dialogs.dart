@@ -2,20 +2,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_text_style.dart';
+import 'package:flutter/foundation.dart' show TargetPlatform;
 
 class CustomDialog {
-  showCustomAlertDialog(BuildContext context, String title, String content) {
+  showCustomDialog(BuildContext context, String title, String content) {
+    final platform = Theme.of(context).platform;
     showDialog(
       context: context,
       builder: (context) {
-        return AlertDialog(
-          backgroundColor: CustomColors.darkColor,
-          title: customText(title),
-          content: customText(content),
-          actions: [
-            customTextButton(context),
-          ],
-        );
+        if (platform == TargetPlatform.iOS) {
+          return Theme(
+            data: ThemeData.dark(),
+            child: CupertinoAlertDialog(
+              title: customText(title),
+              content: customText(content),
+              actions: [
+                customTextButton(context),
+              ],
+            ),
+          );
+        } else if (platform == TargetPlatform.android) {
+          return AlertDialog(
+            backgroundColor: CustomColors.darkColor,
+            title: customText(title),
+            content: customText(content),
+            actions: [
+              customTextButton(context),
+            ],
+          );
+        } else {
+          return AlertDialog();
+        }
       },
     );
   }

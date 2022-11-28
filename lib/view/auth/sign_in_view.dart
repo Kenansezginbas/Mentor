@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mentor/service/auth_service.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_decoration.dart';
+import 'package:mentor/utils/custom_dialogs.dart';
 import 'package:mentor/utils/custom_text_style.dart';
-import 'package:mentor/widgets/custom_graident_button.dart';
-import 'package:mentor/widgets/custom_sign_row_button.dart';
-import 'package:mentor/widgets/logo_widget.dart';
+import 'package:mentor/widgets/buttons/custom_graident_button.dart';
+import 'package:mentor/widgets/buttons/custom_sign_row_button.dart';
+import 'package:mentor/widgets/rows/logo_widget.dart';
+import 'package:flutter/foundation.dart' show TargetPlatform;
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -18,8 +20,10 @@ class _SignInViewState extends State<SignInView> {
   late String email, password;
   final _formKey = GlobalKey<FormState>();
   final authService = AuthService();
+  final dialog = CustomDialog();
   @override
   Widget build(BuildContext context) {
+    var platform = Theme.of(context).platform;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -37,16 +41,19 @@ class _SignInViewState extends State<SignInView> {
               passwordTextField(),
               const SizedBox(height: 10),
               CustomGraidentButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      final result = authService.signIn(email, password);
+                      final result = await authService.signIn(email, password);
                       if (result == "success") {
-                      } else {}
+                      } else {
+                        dialog.showCustomDialog(
+                            context, "Hata", result.toString());
+                      }
                     }
                   },
                   buttonText: "Giriş Yap"),
-              dontHaveAnAccount()
+              dontHaveAnAccount(context)
             ],
           ),
         ),
@@ -58,7 +65,7 @@ class _SignInViewState extends State<SignInView> {
     return TextFormField(
       validator: (value) {
         if (value!.length < 6) {
-          return "En Az 6 Karakter Giriniz";
+          return "Lutfen Mail Adresinizi Giriniz.";
         } else {
           return null;
         }
@@ -92,10 +99,11 @@ class _SignInViewState extends State<SignInView> {
     );
   }
 
-  CustomSignRowButton dontHaveAnAccount() {
+  CustomSignRowButton dontHaveAnAccount(BuildContext context) {
     return CustomSignRowButton(
-      onPressed: () {},
-      text: "Hesabın Yok mu?",
+      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+          context, "/signUp", (route) => false),
+      text: "Hesabın Yok mu ?",
       buttonText: "Kayıt Ol",
     );
   }

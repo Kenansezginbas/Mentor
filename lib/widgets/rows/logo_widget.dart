@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentor/utils/custom_text_style.dart';
-import 'package:mentor/widgets/custom_circle_avatar.dart';
+import 'package:mentor/widgets/avatars/custom_circle_avatar.dart';
 
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});

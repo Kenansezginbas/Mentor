@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/widgets/menu_container.dart';
+import 'package:mentor/widgets/containers/menu_container.dart';
 
 class MenuView extends StatefulWidget {
   const MenuView({super.key});

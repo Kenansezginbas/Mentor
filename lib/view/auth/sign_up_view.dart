@@ -5,9 +5,9 @@ import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_decoration.dart';
 import 'package:mentor/utils/custom_dialogs.dart';
 import 'package:mentor/utils/custom_text_style.dart';
-import 'package:mentor/widgets/custom_graident_button.dart';
-import 'package:mentor/widgets/custom_sign_row_button.dart';
-import 'package:mentor/widgets/logo_widget.dart';
+import 'package:mentor/widgets/buttons/custom_graident_button.dart';
+import 'package:mentor/widgets/buttons/custom_sign_row_button.dart';
+import 'package:mentor/widgets/rows/logo_widget.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -44,7 +44,7 @@ class _SignUpViewState extends State<SignUpView> {
                 onPressed: formValidateAndSave,
                 buttonText: "Kayıt Ol",
               ),
-              doHaveAnAccount()
+              doHaveAndAccount(context),
             ],
           ),
         ),
@@ -77,7 +77,7 @@ class _SignUpViewState extends State<SignUpView> {
     return TextFormField(
       validator: (value) {
         if (value!.length < 6) {
-          return "En Az 6 Karakter Giriniz";
+          return "Lutfen Mail Adresinizi Giriniz.";
         } else {
           return null;
         }
@@ -96,7 +96,7 @@ class _SignUpViewState extends State<SignUpView> {
     return TextFormField(
       validator: (value) {
         if (value!.isEmpty) {
-          return "Lutfen Mail Adresinizi Giriniz.";
+          return "En Az 6 Karakter Giriniz";
         } else {
           return null;
         }
@@ -133,9 +133,10 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 
-  CustomSignRowButton doHaveAnAccount() {
+  CustomSignRowButton doHaveAndAccount(BuildContext context) {
     return CustomSignRowButton(
-      onPressed: () {},
+      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+          context, "/signIn", (route) => false),
       text: "Zaten Bir Hesabın mı Var?",
       buttonText: "Giriş Yap",
     );

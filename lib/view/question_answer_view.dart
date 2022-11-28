@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_text_style.dart';
-import 'package:mentor/widgets/blog_container.dart';
-import 'package:mentor/widgets/logo_widget.dart';
-import 'package:mentor/widgets/question_answer_container.dart';
+import 'package:mentor/widgets/containers/blog_container.dart';
+import 'package:mentor/widgets/rows/logo_widget.dart';
+import 'package:mentor/widgets/containers/question_answer_container.dart';
 
 class QuestionAnswerView extends StatefulWidget {
   const QuestionAnswerView({super.key});
