@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/model/service/auth_service.dart';
+import 'package:mentor/service/auth/auth_service.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_decoration.dart';
 import 'package:mentor/utils/custom_dialogs.dart';

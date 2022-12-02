@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         "/homeView": (context) => HomeView(),
         "/menuView": (context) => MenuView(),
         "/questionAnswerView": (context) => QuestionAnswerView(),
+        "/tabBarController": (context) => TabBarController()
       },
       home: AddQuetion(),
     );

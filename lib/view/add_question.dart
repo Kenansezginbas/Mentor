@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mentor/service/auth/auth_service.dart';
 import 'package:mentor/utils/custom_decoration.dart';
 import 'package:mentor/utils/custom_text_style.dart';
 import 'package:mentor/widgets/buttons/custom_graident_button.dart';
@@ -17,26 +18,29 @@ class AddQuetion extends StatefulWidget {
 }
 
 class _AddQuetionState extends State<AddQuetion> {
-  File? image;
-  String postDesc = "";
-  String plate = "";
+  String question = "";
   bool isLoading = false;
+  User? _user;
   final _firebaseFirestore = FirebaseFirestore.instance.collection("Questions");
   final _formKey = GlobalKey<FormState>();
   var uuid = Uuid();
   late var id;
   var _firebaseAuth = FirebaseAuth.instance;
   var now = DateTime.now();
+  final authService = AuthService();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getUser();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: isLoading
-          ? showProgress()
-          : SingleChildScrollView(
-              child: postQuestion(),
-            ),
+      body: isLoading ? showProgress() : body(),
     );
   }
 
@@ -46,18 +50,15 @@ class _AddQuetionState extends State<AddQuetion> {
     );
   }
 
-  postQuestion() => Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 20),
-            formArea(),
-            CustomGraidentButton(
-              buttonText: "Paylaş",
-              onPressed: sendMe,
-            ),
-          ],
-        ),
+  body() => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          formArea(),
+          CustomGraidentButton(
+            buttonText: "Paylaş",
+            onPressed: sendMe,
+          ),
+        ],
       );
 
   Form formArea() {
@@ -76,28 +77,29 @@ class _AddQuetionState extends State<AddQuetion> {
             }
           },
           onSaved: (val) {
-            postDesc = val!;
+            question = val!;
           },
           cursorColor: Colors.black,
+          decoration: CustomDecoration().textFieldDecoration("Soru"),
         ),
       ),
     );
   }
 
   sendMe() async {
-    if (plate == null) {
-      plate = "";
-    }
     try {
       final result = await _firebaseFirestore.add({
-        "Description": postDesc,
-        "User": "",
         "ID": uuid.v1(),
         "Date": now.toString(),
+        "Question": question,
+        "Answer": "",
+        "Answered": false,
+        "User": _user!.email,
+        "Type": "Software"
       });
       cleanData();
       showSnackBar("Görüş ve Öneriniz Paylaşıldı, Teşekkür Ederiz :) ");
-      Navigator.pushReplacementNamed(context, "/initialPage");
+      Navigator.pushReplacementNamed(context, "/tabBarController");
     } catch (e) {
       print(e.toString());
 
@@ -105,11 +107,13 @@ class _AddQuetionState extends State<AddQuetion> {
     }
   }
 
-//veri kaydedildiğinde değişkenleri null'a çeker, loadingi false yapar;
+  Future<void> _getUser() async {
+    _user = await authService.currentUser();
+  }
+
   cleanData() {
     setState(() {
-      image = null;
-      postDesc = "";
+      question = "";
       isLoading = false;
     });
   }
