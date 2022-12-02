@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:mentor/controller/tab_bar_controller.dart';
 import 'package:mentor/firebase_options.dart';
 import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/view/auth/sign_in_view.dart';
@@ -24,22 +25,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mentor',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: CustomColors.darkColor,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: CustomColors.darkColor,
+        title: 'Mentor',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: CustomColors.darkColor,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: CustomColors.darkColor,
+          ),
         ),
-      ),
-      routes: {
-        "/signIn": (context) => SignInView(),
-        "/signUp": (context) => SignUpView(),
-        "/homeView": (context) => HomeView(),
-        "/menuView": (context) => MenuView(),
-        "/questionAnswerView": (context) => QuestionAnswerView(),
-      },
-      home: const HomeView(),
-    );
+        routes: {
+          "/signIn": (context) => SignInView(),
+          "/signUp": (context) => SignUpView(),
+          "/homeView": (context) => HomeView(),
+          "/menuView": (context) => MenuView(),
+          "/questionAnswerView": (context) => QuestionAnswerView(),
+        },
+        home: TabBarController());
   }
 }

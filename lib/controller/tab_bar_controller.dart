@@ -4,6 +4,7 @@ import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/view/home_view.dart';
 import 'package:mentor/view/menu_view.dart';
 import 'package:mentor/view/question_answer_view.dart';
+import 'package:mentor/widgets/buttons/custom_fab_button.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
 
 class TabBarController extends StatefulWidget {
@@ -31,6 +32,11 @@ class _TabBarControllerState extends State<TabBarController> {
           MenuView(),
         ],
       ),
+      floatingActionButton: _currentIndex == 1
+          ? CustomFabButton(
+              onPressed: () {},
+            )
+          : null,
       bottomNavigationBar: customBottomNavigationBar(),
     );
   }
