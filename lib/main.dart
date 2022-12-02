@@ -37,12 +37,13 @@ class MyApp extends StatelessWidget {
       routes: {
         "/signIn": (context) => SignInView(),
         "/signUp": (context) => SignUpView(),
+        "/tabBarController": (context) => TabBarController(),
         "/homeView": (context) => HomeView(),
         "/menuView": (context) => MenuView(),
         "/questionAnswerView": (context) => QuestionAnswerView(),
-        "/tabBarController": (context) => TabBarController()
+        "/addQuestion": (context) => AddQuestion()
       },
-      home: AddQuetion(),
+      home: AddQuestion(),
     );
   }
 }

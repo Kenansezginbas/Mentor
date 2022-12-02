@@ -10,14 +10,14 @@ import 'package:mentor/widgets/buttons/custom_graident_button.dart';
 import 'package:mentor/widgets/texts/custom_post_test.dart';
 import 'package:uuid/uuid.dart';
 
-class AddQuetion extends StatefulWidget {
-  const AddQuetion({super.key});
+class AddQuestion extends StatefulWidget {
+  const AddQuestion({super.key});
 
   @override
-  State<AddQuetion> createState() => _AddQuetionState();
+  State<AddQuestion> createState() => _AddQuestionState();
 }
 
-class _AddQuetionState extends State<AddQuetion> {
+class _AddQuestionState extends State<AddQuestion> {
   String question = "";
   bool isLoading = false;
   User? _user;
@@ -56,7 +56,7 @@ class _AddQuetionState extends State<AddQuetion> {
           formArea(),
           CustomGraidentButton(
             buttonText: "Paylaş",
-            onPressed: sendMe,
+            onPressed: validateAndSaveData,
           ),
         ],
       );
@@ -86,7 +86,14 @@ class _AddQuetionState extends State<AddQuetion> {
     );
   }
 
-  sendMe() async {
+  validateAndSaveData() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      saveData();
+    }
+  }
+
+  saveData() async {
     try {
       final result = await _firebaseFirestore.add({
         "ID": uuid.v1(),
@@ -98,7 +105,8 @@ class _AddQuetionState extends State<AddQuetion> {
         "Type": "Software"
       });
       cleanData();
-      showSnackBar("Görüş ve Öneriniz Paylaşıldı, Teşekkür Ederiz :) ");
+      showSnackBar(
+          "Sorunuz Paylaşıldı. 24 Saat İçerisinde İncelenip Cevap Verilecektir.");
       Navigator.pushReplacementNamed(context, "/tabBarController");
     } catch (e) {
       print(e.toString());
