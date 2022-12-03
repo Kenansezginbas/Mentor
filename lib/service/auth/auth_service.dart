@@ -1,10 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:mentor/service/base/base_auth.dart';
 
-class AuthService {
+class AuthService extends BaseAuth {
   final firebaseAuth = FirebaseAuth.instance;
 
-  Future<String?> signIn(String email, String password) async {
+  @override
+  Future<User?> currentUser() async {
+    try {
+      final result = await firebaseAuth.currentUser;
+      final User? user = result;
+      return user;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  @override
+  Future<String> signIn(String email, String password) async {
     String? res;
     try {
       final result = await firebaseAuth.signInWithEmailAndPassword(
@@ -33,7 +45,8 @@ class AuthService {
     return res;
   }
 
-  Future<String?> signUp(String email, String password) async {
+  @override
+  Future<String> signUp(String email, String password) async {
     String? res;
     try {
       final result = await firebaseAuth.createUserWithEmailAndPassword(
@@ -57,17 +70,8 @@ class AuthService {
     return res;
   }
 
-  Future currentUser() async {
-    try {
-      final result = await firebaseAuth.currentUser;
-      final User? user = result;
-      return user;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  Future signOut() async {
+  @override
+  Future<void> signOut() async {
     try {
       final result = await firebaseAuth.signOut();
       return result;
