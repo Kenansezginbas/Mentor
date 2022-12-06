@@ -26,7 +26,7 @@ class _TabBarControllerState extends State<TabBarController> {
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
-        children: [
+        children: const [
           HomeView(),
           QuestionAnswerView(),
           MenuView(),
