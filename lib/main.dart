@@ -35,15 +35,15 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: {
-        "/signIn": (context) => SignInView(),
-        "/signUp": (context) => SignUpView(),
-        "/tabBarController": (context) => TabBarController(),
-        "/homeView": (context) => HomeView(),
-        "/menuView": (context) => MenuView(),
-        "/questionAnswerView": (context) => QuestionAnswerView(),
-        "/addQuestion": (context) => AddQuestion()
+        "/signIn": (context) => const SignInView(),
+        "/signUp": (context) => const SignUpView(),
+        "/tabBarController": (context) => const TabBarController(),
+        "/homeView": (context) => const HomeView(),
+        "/menuView": (context) => const MenuView(),
+        "/questionAnswerView": (context) => const QuestionAnswerView(),
+        "/addQuestion": (context) => const AddQuestion()
       },
-      home: AddQuestion(),
+      home: const TabBarController(),
     );
   }
 }

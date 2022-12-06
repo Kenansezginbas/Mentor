@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/utils/custom_text_style.dart';
 
 class QuestionAnswerCard extends StatelessWidget {

@@ -8,7 +8,7 @@ class CustomDecoration {
         hintStyle: CustomTextStyle.subtitleGreyTextStyle,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: CustomColors.yellowColor,
           ),
         ),

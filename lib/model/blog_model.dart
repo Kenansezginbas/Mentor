@@ -16,12 +16,12 @@ class BlogModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['blogTitle'] = this.blogTitle;
-    data['blogDate'] = this.blogDate;
-    data['blogContent'] = this.blogContent;
-    data['blogWriter'] = this.blogWriter;
-    data['blogUrl'] = this.blogUrl;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['blogTitle'] = blogTitle;
+    data['blogDate'] = blogDate;
+    data['blogContent'] = blogContent;
+    data['blogWriter'] = blogWriter;
+    data['blogUrl'] = blogUrl;
     return data;
   }
 }

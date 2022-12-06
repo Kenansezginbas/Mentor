@@ -14,7 +14,7 @@ class LogoWidget extends StatelessWidget {
           "MEN",
           style: CustomTextStyle.logoTextStyle,
         ),
-        CustomCircleAvatar(),
+        const CustomCircleAvatar(),
         Text(
           "TOR",
           style: CustomTextStyle.logoTextStyle,
