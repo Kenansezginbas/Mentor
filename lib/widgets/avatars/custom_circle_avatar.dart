@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
+
+import '../../themes/custom_colors.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   const CustomCircleAvatar({super.key});
@@ -7,7 +8,7 @@ class CustomCircleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: CustomColors.orangeColor,
+      backgroundColor: ColorManager.orangeColor,
     );
   }
 }

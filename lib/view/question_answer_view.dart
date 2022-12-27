@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
-import 'package:mentor/utils/custom_text_style.dart';
 import 'package:mentor/widgets/cards/blog_container.dart';
+import 'package:mentor/widgets/custom_circles.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
 import 'package:mentor/widgets/cards/question_answer_card.dart';
+import '../themes/custom_colors.dart';
 
 class QuestionAnswerView extends StatefulWidget {
   const QuestionAnswerView({super.key});
@@ -30,11 +30,7 @@ class _QuestionAnswerViewState extends State<QuestionAnswerView> {
             );
           }
           if (!snapshot.hasData) {
-            return const Center(
-              child: CircularProgressIndicator(
-                color: CustomColors.yellowColor,
-              ),
-            );
+            return const CustomCircle();
           }
           final data = snapshot.requireData.docs;
           return ListView.builder(

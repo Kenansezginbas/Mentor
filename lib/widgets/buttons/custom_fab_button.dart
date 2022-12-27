@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
+import '../../themes/custom_colors.dart';
 
 class CustomFabButton extends StatelessWidget {
   final GestureTapCallback onPressed;
@@ -13,9 +13,9 @@ class CustomFabButton extends StatelessWidget {
       child: Icon(
         CupertinoIcons.add_circled,
         size: 30,
-        color: CustomColors.darkColor,
+        color: ColorManager.darkColor,
       ),
-      backgroundColor: CustomColors.orangeColor,
+      backgroundColor: ColorManager.orangeColor,
     );
   }
 }

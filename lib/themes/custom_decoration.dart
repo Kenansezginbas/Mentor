@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+import 'custom_colors.dart';
+import 'custom_text_style.dart';
 
 class CustomDecoration {
   textFieldDecoration(String hintText) => InputDecoration(
         hintText: hintText,
-        hintStyle: CustomTextStyle.subtitleGreyTextStyle,
+        hintStyle: StyleManager.subtitleGreyTextStyle,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: CustomColors.yellowColor,
+          borderSide: BorderSide(
+            color: ColorManager.yellowColor,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: CustomColors.whiteColor,
+            color: ColorManager.whiteColor,
           ),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: CustomColors.whiteColor,
+            color: ColorManager.whiteColor,
           ),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.red,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.orange,
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_text_style.dart';
-import '../../utils/custom_colors.dart';
+import 'package:mentor/themes/custom_colors.dart';
+
+import '../../themes/custom_text_style.dart';
 
 class CustomGraidentButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -24,11 +25,11 @@ class CustomGraidentButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           gradient: RadialGradient(
             radius: 2,
-            colors: [CustomColors.darkColor, CustomColors.darkColor2],
+            colors: [ColorManager.darkColor, ColorManager.darkColor2],
           ),
         ),
         child: Center(
-          child: Text(buttonText, style: CustomTextStyle.titleWhiteTextStyle),
+          child: Text(buttonText, style: StyleManager.titleWhiteTextStyle),
         ),
       ),
     );

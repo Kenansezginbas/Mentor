@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
+import '../../themes/custom_text_style.dart';
 
 class QuestionAnswerCard extends StatelessWidget {
   final String question, answer, type;
@@ -18,13 +19,13 @@ class QuestionAnswerCard extends StatelessWidget {
     return ListTile(
       title: Text(
         question,
-        style: CustomTextStyle.titleWhiteTextStyle,
+        style: StyleManager.titleWhiteTextStyle,
       ),
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 10),
         child: Text(
           answered == true ? "Cevaplandı" : "Cevaplanmadı",
-          style: CustomTextStyle.subtitleGreyTextStyle,
+          style: StyleManager.subtitleGreyTextStyle,
         ),
       ),
     );

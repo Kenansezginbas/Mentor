@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/view/home_view.dart';
 import 'package:mentor/view/menu_view.dart';
 import 'package:mentor/view/question_answer_view.dart';
 import 'package:mentor/widgets/buttons/custom_fab_button.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
+
+import '../../themes/custom_colors.dart';
 
 class TabBarController extends StatefulWidget {
   const TabBarController({super.key});
@@ -52,9 +53,9 @@ class _TabBarControllerState extends State<TabBarController> {
       },
       currentIndex: _currentIndex,
       type: BottomNavigationBarType.fixed,
-      backgroundColor: CustomColors.darkColor,
-      selectedItemColor: CustomColors.yellowColor,
-      unselectedItemColor: CustomColors.whiteColor,
+      backgroundColor: ColorManager.darkColor,
+      selectedItemColor: ColorManager.yellowColor,
+      unselectedItemColor: ColorManager.whiteColor,
       items: [
         customBottomNavigationBarItem(CupertinoIcons.house, "Anasayfa"),
         customBottomNavigationBarItem(

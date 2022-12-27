@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
 import 'package:mentor/widgets/cards/blog_container.dart';
+import 'package:mentor/widgets/custom_circles.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -25,11 +25,7 @@ class _HomeViewState extends State<HomeView> {
             );
           }
           if (!snapshot.hasData) {
-            return const Center(
-              child: CircularProgressIndicator(
-                color: CustomColors.yellowColor,
-              ),
-            );
+            return const CustomCircle();
           }
           final data = snapshot.requireData.docs;
           return ListView.builder(

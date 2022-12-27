@@ -3,11 +3,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor/service/auth/auth_service.dart';
-import 'package:mentor/utils/custom_decoration.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
 import 'package:mentor/widgets/buttons/custom_graident_button.dart';
 import 'package:mentor/widgets/texts/custom_post_test.dart';
 import 'package:uuid/uuid.dart';
+
+import '../themes/custom_decoration.dart';
+import '../themes/custom_text_style.dart';
 
 class AddQuestion extends StatefulWidget {
   const AddQuestion({super.key});
@@ -66,7 +68,7 @@ class _AddQuestionState extends State<AddQuestion> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: TextFormField(
-          style: CustomTextStyle.titleWhiteTextStyle,
+          style: StyleManager.titleWhiteTextStyle,
           maxLines: 3,
           validator: (val) {
             if (val!.isEmpty) {

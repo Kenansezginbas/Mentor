@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
 import 'package:flutter/foundation.dart' show TargetPlatform;
+
+import 'custom_colors.dart';
+import 'custom_text_style.dart';
 
 class CustomDialog {
   showCustomDialog(BuildContext context, String title, String content) {
@@ -23,7 +25,7 @@ class CustomDialog {
           );
         } else if (platform == TargetPlatform.android) {
           return AlertDialog(
-            backgroundColor: CustomColors.darkColor,
+            backgroundColor: ColorManager.darkColor,
             title: customText(title),
             content: customText(content),
             actions: [
@@ -40,7 +42,7 @@ class CustomDialog {
   Text customText(String title) {
     return Text(
       title,
-      style: CustomTextStyle.titleWhiteTextStyle,
+      style: StyleManager.titleWhiteTextStyle,
     );
   }
 
@@ -68,7 +70,7 @@ class CustomDialog {
       onPressed: () => Navigator.pop(context),
       child: Text(
         "Geri Dön",
-        style: CustomTextStyle.titleWhiteTextStyle,
+        style: StyleManager.titleWhiteTextStyle,
       ),
     );
   }
@@ -79,7 +81,7 @@ class CustomDialog {
       builder: (context) {
         return Center(
           child: CircularProgressIndicator(
-            color: CustomColors.orangeColor,
+            color: ColorManager.orangeColor,
           ),
         );
       },

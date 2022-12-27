@@ -1,13 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor/service/auth/auth_service.dart';
-import 'package:mentor/utils/custom_colors.dart';
-import 'package:mentor/utils/custom_decoration.dart';
-import 'package:mentor/utils/custom_dialogs.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
 import 'package:mentor/widgets/buttons/custom_graident_button.dart';
 import 'package:mentor/widgets/buttons/custom_sign_row_button.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
+
+import '../../themes/custom_colors.dart';
+import '../../themes/custom_decoration.dart';
+import '../../themes/custom_dialogs.dart';
+import '../../themes/custom_text_style.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -86,8 +88,8 @@ class _SignUpViewState extends State<SignUpView> {
         email = value!;
       },
       keyboardType: TextInputType.emailAddress,
-      style: CustomTextStyle.titleWhiteTextStyle,
-      cursorColor: CustomColors.yellowColor,
+      style: StyleManager.titleWhiteTextStyle,
+      cursorColor: ColorManager.yellowColor,
       decoration: CustomDecoration().textFieldDecoration("Email"),
     );
   }
@@ -106,8 +108,8 @@ class _SignUpViewState extends State<SignUpView> {
       },
       controller: _textEditingController,
       obscureText: true,
-      style: CustomTextStyle.titleWhiteTextStyle,
-      cursorColor: CustomColors.yellowColor,
+      style: StyleManager.titleWhiteTextStyle,
+      cursorColor: ColorManager.yellowColor,
       decoration: CustomDecoration().textFieldDecoration("Şifre"),
     );
   }
@@ -127,8 +129,8 @@ class _SignUpViewState extends State<SignUpView> {
         password = value!;
       },
       obscureText: true,
-      style: CustomTextStyle.titleWhiteTextStyle,
-      cursorColor: CustomColors.yellowColor,
+      style: StyleManager.titleWhiteTextStyle,
+      cursorColor: ColorManager.yellowColor,
       decoration: CustomDecoration().textFieldDecoration("Şifre (Tekrar)"),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_colors.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
+import '../../themes/custom_colors.dart';
+import '../../themes/custom_text_style.dart';
 
 class BlogContainer extends StatelessWidget {
   final String blogTitle, blogDate, blogContent, blogWriter, blogImageUrl;
@@ -43,11 +44,11 @@ class BlogContainer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 5, bottom: 10),
       child: Align(
-        child: Text(
-          blogTitle,
-          style: CustomTextStyle.titleWhiteTextStyle,
-        ),
         alignment: Alignment.centerLeft,
+        child:Text(
+          blogTitle,
+          style: StyleManager.titleWhiteTextStyle,
+        ),
       ),
     );
   }
@@ -56,7 +57,7 @@ class BlogContainer extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 10),
         child: Text(
           text,
-          style: CustomTextStyle.subtitleGreyTextStyle,
+          style: StyleManager.subtitleGreyTextStyle,
         ),
       );
 
@@ -70,11 +71,11 @@ class BlogContainer extends StatelessWidget {
   }
 
   BoxDecoration _boxDecoration() {
-    return const BoxDecoration(
-      color: CustomColors.darkColor2,
+    return BoxDecoration(
+      color: ColorManager.darkColor2,
       border: Border(
         bottom: BorderSide(
-          color: CustomColors.yellowColor,
+          color: ColorManager.yellowColor,
           width: 3,
         ),
       ),

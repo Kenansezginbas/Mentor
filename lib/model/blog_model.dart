@@ -10,6 +10,6 @@ class BlogModel {
 
   BlogModel({this.blogTitle, this.blogDate, this.blogContent, this.blogWriter});
 
-  factory BlogModel.fromJson(Map<String, dynamic> json) => _$BlogFromJson(json);
-  Map<String, dynamic> toJson() => _$BlogModelToJson(this);
+  // factory BlogModel.fromJson(Map<String, dynamic> json) => _$BlogFromJson(json);
+  // Map<String, dynamic> toJson() => _$BlogModelToJson(this);
 }

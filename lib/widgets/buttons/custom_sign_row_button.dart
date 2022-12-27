@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
+import '../../themes/custom_text_style.dart';
 
 class CustomSignRowButton extends StatelessWidget {
   final GestureTapCallback onPressed;
@@ -18,13 +19,13 @@ class CustomSignRowButton extends StatelessWidget {
       children: [
         Text(
           text,
-          style: CustomTextStyle.subtitleGreyTextStyle,
+          style: StyleManager.subtitleGreyTextStyle,
         ),
         TextButton(
           onPressed: onPressed,
           child: Text(
             buttonText,
-            style: CustomTextStyle.titleWhiteTextStyle,
+            style: StyleManager.titleWhiteTextStyle,
           ),
         ),
       ],

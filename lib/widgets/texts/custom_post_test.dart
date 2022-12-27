@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/utils/custom_text_style.dart';
+
+import '../../themes/custom_text_style.dart';
 
 class CustomPostText extends StatelessWidget {
   final String text;
@@ -9,7 +10,7 @@ class CustomPostText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: CustomTextStyle.titleWhiteTextStyle,
+      style: StyleManager.titleWhiteTextStyle,
     );
   }
 }
