@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/custom_text_style.dart';
+import '../../themes/style_manager.dart';
 
 class CustomSignRowButton extends StatelessWidget {
   final GestureTapCallback onPressed;

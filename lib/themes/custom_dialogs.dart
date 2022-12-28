@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show TargetPlatform;
-import 'custom_colors.dart';
-import 'custom_text_style.dart';
+import 'color_manager.dart';
+import 'style_manager.dart';
 
 class CustomDialog {
   showCustomDialog(BuildContext context, String title, String content) {
@@ -31,7 +31,7 @@ class CustomDialog {
             ],
           );
         } else {
-          return AlertDialog();
+          return const AlertDialog();
         }
       },
     );

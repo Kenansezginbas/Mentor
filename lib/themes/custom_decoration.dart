@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'custom_colors.dart';
-import 'custom_text_style.dart';
+import 'color_manager.dart';
+import 'style_manager.dart';
 
 class CustomDecoration {
   textFieldDecoration(String hintText) => InputDecoration(

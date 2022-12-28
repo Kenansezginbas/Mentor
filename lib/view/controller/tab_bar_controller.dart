@@ -6,7 +6,7 @@ import 'package:mentor/view/question_answer_view.dart';
 import 'package:mentor/widgets/buttons/custom_fab_button.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
 
-import '../../themes/custom_colors.dart';
+import '../../themes/color_manager.dart';
 
 class TabBarController extends StatefulWidget {
   const TabBarController({super.key});

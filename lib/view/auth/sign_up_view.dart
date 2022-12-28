@@ -3,10 +3,10 @@ import 'package:mentor/service/auth/auth_service.dart';
 import 'package:mentor/widgets/buttons/custom_graident_button.dart';
 import 'package:mentor/widgets/buttons/custom_sign_row_button.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
-import '../../themes/custom_colors.dart';
+import '../../themes/color_manager.dart';
 import '../../themes/custom_decoration.dart';
 import '../../themes/custom_dialogs.dart';
-import '../../themes/custom_text_style.dart';
+import '../../themes/style_manager.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});

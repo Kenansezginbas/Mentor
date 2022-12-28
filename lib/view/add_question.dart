@@ -8,7 +8,7 @@ import 'package:mentor/widgets/texts/custom_post_test.dart';
 import 'package:uuid/uuid.dart';
 
 import '../themes/custom_decoration.dart';
-import '../themes/custom_text_style.dart';
+import '../themes/style_manager.dart';
 
 class AddQuestion extends StatefulWidget {
   const AddQuestion({super.key});

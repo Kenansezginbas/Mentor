@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../themes/custom_colors.dart';
-import '../../themes/custom_text_style.dart';
+import '../../themes/color_manager.dart';
+import '../../themes/style_manager.dart';
 
 class MenuContainer extends StatelessWidget {
   const MenuContainer({super.key});

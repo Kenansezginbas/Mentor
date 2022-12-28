@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mentor/themes/custom_colors.dart';
+import 'package:mentor/themes/color_manager.dart';
 
-import '../../themes/custom_text_style.dart';
+import '../../themes/style_manager.dart';
 
 class CustomGraidentButton extends StatelessWidget {
   final VoidCallback onPressed;
