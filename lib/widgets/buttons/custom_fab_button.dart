@@ -10,12 +10,12 @@ class CustomFabButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: onPressed,
+      backgroundColor: ColorManager.orangeColor,
       child: Icon(
         CupertinoIcons.add_circled,
         size: 30,
         color: ColorManager.darkColor,
       ),
-      backgroundColor: ColorManager.orangeColor,
     );
   }
 }

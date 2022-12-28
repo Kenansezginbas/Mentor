@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter/foundation.dart' show TargetPlatform;
-
 import 'custom_colors.dart';
 import 'custom_text_style.dart';
 

@@ -48,6 +48,7 @@ class _SignInViewState extends State<SignInView> {
                       final result = await authService.signIn(email, password);
                       if (result == "success") {
                       } else {
+                        // ignore: use_build_context_synchronously
                         dialog.showCustomDialog(
                             context, "Hata", result.toString());
                       }

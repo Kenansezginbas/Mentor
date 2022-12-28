@@ -4,7 +4,7 @@ import '../../themes/custom_text_style.dart';
 
 class CustomSignRowButton extends StatelessWidget {
   final GestureTapCallback onPressed;
-  final text, buttonText;
+  final String text, buttonText;
   const CustomSignRowButton({
     super.key,
     required this.onPressed,

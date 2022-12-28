@@ -37,6 +37,15 @@ class MenuContainer extends StatelessWidget {
       Container(
         height: height * .06,
         width: width,
+        decoration: BoxDecoration(
+          color: ColorManager.darkColor2,
+          border: Border(
+            bottom: BorderSide(
+              color: ColorManager.yellowColor,
+              width: 3,
+            ),
+          ),
+        ),
         child: ListTile(
           onTap: onTap,
           title: Text(
@@ -46,15 +55,6 @@ class MenuContainer extends StatelessWidget {
           trailing: Icon(
             CupertinoIcons.right_chevron,
             color: ColorManager.whiteColor,
-          ),
-        ),
-        decoration: BoxDecoration(
-          color: ColorManager.darkColor2,
-          border: Border(
-            bottom: BorderSide(
-              color: ColorManager.yellowColor,
-              width: 3,
-            ),
           ),
         ),
       );

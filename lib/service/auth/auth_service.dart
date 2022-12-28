@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mentor/service/base/base_auth.dart';
+import 'package:mentor/service/auth/base_auth.dart';
 
-class AuthService extends BaseAuth {
+class AuthService extends IAuthService {
   final firebaseAuth = FirebaseAuth.instance;
 
   @override
@@ -51,7 +51,6 @@ class AuthService extends BaseAuth {
     try {
       final result = await firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-
       res = "success";
     } on FirebaseAuthException catch (e) {
       switch (e.code) {

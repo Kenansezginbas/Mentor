@@ -1,11 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor/service/auth/auth_service.dart';
-
 import 'package:mentor/widgets/buttons/custom_graident_button.dart';
 import 'package:mentor/widgets/buttons/custom_sign_row_button.dart';
 import 'package:mentor/widgets/rows/logo_widget.dart';
-
 import '../../themes/custom_colors.dart';
 import '../../themes/custom_decoration.dart';
 import '../../themes/custom_dialogs.dart';
@@ -20,7 +17,7 @@ class SignUpView extends StatefulWidget {
 
 class _SignUpViewState extends State<SignUpView> {
   late String email, password;
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -67,11 +64,12 @@ class _SignUpViewState extends State<SignUpView> {
     try {
       final resultAuth = await authService.signUp(email, password);
       if (resultAuth == "success") {
-        print("Basarili");
       } else {
+        // ignore: use_build_context_synchronously
         customDialog.showCustomCupertinoDialog(
             context, "Hata", resultAuth.toString());
       }
+      // ignore: empty_catches
     } catch (e) {}
   }
 

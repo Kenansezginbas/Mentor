@@ -1,10 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/widgets/cards/blog_container.dart';
 import 'package:mentor/widgets/custom_circles.dart';
-import 'package:mentor/widgets/rows/logo_widget.dart';
 import 'package:mentor/widgets/cards/question_answer_card.dart';
-import '../themes/custom_colors.dart';
 
 class QuestionAnswerView extends StatefulWidget {
   const QuestionAnswerView({super.key});
@@ -18,8 +15,8 @@ class _QuestionAnswerViewState extends State<QuestionAnswerView> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    // final height = MediaQuery.of(context).size.height;
+    // final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
         stream: firebaseFirestore.snapshots(),

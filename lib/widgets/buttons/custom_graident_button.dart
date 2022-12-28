@@ -20,7 +20,7 @@ class CustomGraidentButton extends StatelessWidget {
       child: Container(
         height: 50,
         width: width,
-        margin: EdgeInsets.symmetric(horizontal: 60),
+        margin: const EdgeInsets.symmetric(horizontal: 60),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           gradient: RadialGradient(

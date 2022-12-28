@@ -71,7 +71,6 @@ class _TabBarControllerState extends State<TabBarController> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _pageController.dispose();
   }
