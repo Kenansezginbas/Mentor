@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor/firebase_options.dart';
-import 'package:mentor/themes/color_manager.dart';
+import 'package:mentor/config/themes/color_manager.dart';
 import 'package:mentor/view/add_question.dart';
 import 'package:mentor/view/auth/sign_in_view.dart';
 import 'package:mentor/view/auth/sign_up_view.dart';

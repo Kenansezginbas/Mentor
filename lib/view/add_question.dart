@@ -3,12 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentor/service/auth/auth_service.dart';
 
-import 'package:mentor/widgets/buttons/custom_graident_button.dart';
-import 'package:mentor/widgets/texts/custom_post_test.dart';
+import 'package:mentor/utils/ui/widgets/buttons/custom_graident_button.dart';
+import 'package:mentor/utils/ui/widgets/texts/custom_post_test.dart';
 import 'package:uuid/uuid.dart';
 
-import '../themes/custom_decoration.dart';
-import '../themes/style_manager.dart';
+import '../config/themes/custom_decoration.dart';
+import '../config/themes/style_manager.dart';
 
 class AddQuestion extends StatefulWidget {
   const AddQuestion({super.key});

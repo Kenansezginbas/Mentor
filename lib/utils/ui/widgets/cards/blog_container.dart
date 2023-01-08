@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/color_manager.dart';
-import '../../themes/style_manager.dart';
+import '../../../../config/themes/color_manager.dart';
+import '../../../../config/themes/style_manager.dart';
 
 class BlogContainer extends StatelessWidget {
   final String blogTitle, blogDate, blogContent, blogWriter, blogImageUrl;

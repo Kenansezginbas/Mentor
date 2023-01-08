@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mentor/service/auth/auth_service.dart';
-import 'package:mentor/widgets/buttons/custom_graident_button.dart';
-import 'package:mentor/widgets/buttons/custom_sign_row_button.dart';
-import 'package:mentor/widgets/rows/logo_widget.dart';
+import 'package:mentor/utils/ui/widgets/buttons/custom_graident_button.dart';
+import 'package:mentor/utils/ui/widgets/buttons/custom_sign_row_button.dart';
+import 'package:mentor/utils/ui/widgets/rows/logo_widget.dart';
 import 'package:flutter/foundation.dart' show TargetPlatform;
 
-import '../../themes/color_manager.dart';
-import '../../themes/custom_decoration.dart';
-import '../../themes/custom_dialogs.dart';
-import '../../themes/style_manager.dart';
+import '../../config/themes/color_manager.dart';
+import '../../config/themes/custom_decoration.dart';
+import '../../config/themes/custom_dialogs.dart';
+import '../../config/themes/style_manager.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});

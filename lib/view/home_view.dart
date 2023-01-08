@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/widgets/cards/blog_container.dart';
-import 'package:mentor/widgets/custom_circles.dart';
+import 'package:mentor/utils/ui/widgets/cards/blog_container.dart';
+import 'package:mentor/utils/ui/widgets/custom_circles.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

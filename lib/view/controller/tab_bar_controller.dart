@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mentor/view/home_view.dart';
 import 'package:mentor/view/menu_view.dart';
 import 'package:mentor/view/question_answer_view.dart';
-import 'package:mentor/widgets/buttons/custom_fab_button.dart';
-import 'package:mentor/widgets/rows/logo_widget.dart';
+import 'package:mentor/utils/ui/widgets/buttons/custom_fab_button.dart';
+import 'package:mentor/utils/ui/widgets/rows/logo_widget.dart';
 
-import '../../themes/color_manager.dart';
+import '../../config/themes/color_manager.dart';
 
 class TabBarController extends StatefulWidget {
   const TabBarController({super.key});

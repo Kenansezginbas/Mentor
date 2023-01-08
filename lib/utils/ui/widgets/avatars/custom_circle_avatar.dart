@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/color_manager.dart';
+import '../../../../config/themes/color_manager.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   const CustomCircleAvatar({super.key});

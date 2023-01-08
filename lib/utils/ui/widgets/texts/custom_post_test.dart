@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/style_manager.dart';
+import '../../../../config/themes/style_manager.dart';
 
 class CustomPostText extends StatelessWidget {
   final String text;

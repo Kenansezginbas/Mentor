@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mentor/widgets/custom_circles.dart';
-import 'package:mentor/widgets/cards/question_answer_card.dart';
+import 'package:mentor/utils/ui/widgets/custom_circles.dart';
+import 'package:mentor/utils/ui/widgets/cards/question_answer_card.dart';
 
 class QuestionAnswerView extends StatefulWidget {
   const QuestionAnswerView({super.key});
